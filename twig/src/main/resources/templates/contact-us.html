@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>TWIG-contact us</title><!--联系我们界面-->
+   <!--bootstrap.min.css-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+   <!--animate.css-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}"/>
+   <!--fontawesome 5-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/all.min.css}"/>
+   <!--slicknav.css-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/slicknav.min.css}"/>
+   <!--slickslider.css-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/slick-theme.css}"/>
+   <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}"/>
+   <!-- lity.css -->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/lity.min.css}"/>
+   <!-- flaticon.css -->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/flaticon.css}"/>
+   <!-- Custom.css -->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}"/>
+   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+   <script th:src="@{/js/html5shiv.js}"></script>
+   <script th:src="@{/js/respond.min.js}"></script>
+   <![endif]-->
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader"></div>
+<!-- Start-Header-Section -->
+<!-- Menu-start-area -->
+<header>
+   <!--Nav-Bar-->
+   <div class="topbar">
+      <div class="container">
+         <div class="row">
+            <div class="top-content">
+               <div class="selec-lang">
+                  <div class="lang-drop eng">
+                     <select>
+                        <option value="USD" class="option-bg">UK</option>
+                        <option value="INR">CHN</option>
+                        <option value="UAE">UAE</option>
+                     </select>
+                  </div>
+                  <div class="lang-drop">
+                     <select>
+                        <option value="English">English</option>
+                        <option value="Hindi">Chinese</option>
+                        <option value="French">French</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--Nav-Bar-->
+   <div class="header-fixed header-one">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-2 col-md-12 col-sm-12">
+               <div class="nav-brand">
+                  <a th:href="@{/toHome}"><img th:src="@{/picture/logo.png}" alt="logo.png" class="logo"></a>
+               </div>
+            </div>
+            <div class="col-lg-8">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <div class="collapse navbar-collapse my-lg-0" id="navbarNav">
+                     <ul class="navbar-nav mr-auto text-left">
+                        <li class="nav-item active">
+                           <a class="nav-link scroll" th:href="@{/toHome}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link scroll" href="Shop.html">Service</a>
+                           <ul class="dropdown">
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" href="upload-service.html">Service Lists</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" th:href="@{/toUploadService}">Upload Service</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" th:href="@{/toUploadSkill}">Upload Skills</a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link scroll" th:href="@{/toUserInfo}">Account</a>
+                           <ul class="dropdown">
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" th:href="@{/toUserInfo}">Account Details</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" th:href="@{/toOrderHistory}">Order History</a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link scroll" th:href="@{/toContactUs}">Contact Us</a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+            <div class="col-lg-2">
+               <div class="login-cart">
+                  <a class="nav-user" th:href="@{/login}"><i class="far fa-user"></i></a>
+               </div>
+            </div>
+            <div class="mobile-menu" data-logo="images/logo.png"></div>
+         </div>
+      </div>
+   </div>
+</header>
+<!-- End-Menu-area-->
+<!---Start-main-section-->
+<section class="page-slider">
+   <div class="hero-banner-content">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+               <h2 class="banner-title">Contact Us</h2>
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a th:href="@{/toHome}">Home</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Contact us</li>
+                  </ol>
+               </nav>
+            </div>
+            <div class="col-lg-6">
+               <div class="about-slider-img">
+                  <img th:src="@{/picture/about-slider-img.png}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!---End-Main-section-->
+      <!---Start-Product-Detail-->
+      <section class="ws-section-spacing">
+         <div class="container">
+            <div class="row">
+                  <div class="col-lg-4">
+                     <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>112 The Plaza, Clay Pit Lane, Leeds, United Kingdom</p>
+                     </div>
+                     <!--item-->
+                     <div class="contact-detail">
+                       <i class="fas fa-phone-volume"></i>
+                        <p>1-800- 123-4567<br>+44 07182 986725</p>
+                     </div>
+                     <!--item-->
+                     <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <p>contactUs@twig.com</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-8">
+                     <!--Contact-Form-->
+                     <div class="contact-us-form">
+                        <form class="contact-form">
+                           <div class="row">
+                              <div class="col-lg-6">
+                                 <div class="form-group">
+                                    <input type="text" class="form-control" id="uname" placeholder="First Name" name="name" required="">
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group">
+                                    <input type="text" class="form-control" id="Last-Name" placeholder="Last Name" name="Last-Name" required="">
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group">
+                                    <input type="number" class="form-control" id="number" placeholder="Phone Number" name="Phone Number" required="">
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter Your Email" name="Your Email" required="">
+                                 </div>
+                              </div>
+                              <div class="col-lg-12">
+                                 <textarea class="form-control" rows="5" id="comment" placeholder="Your Message"></textarea>
+                                  <button type="submit" class="contact-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                              </div>
+                             
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </section>
+      <!---End-Product-Detail-->
+<!---End-Offer-Banner-Section-->
+<section class="section-spacing service-area">
+   <div class="container">
+      <div class="row service-border wow fadeInUp" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1">
+         <div class="col-lg-3 col-sm-6">
+            <div class="single-service-wrap">
+               <div class="thumb">
+                  <img th:src="@{/picture/01.png}" alt="img">
+               </div>
+               <div class="wrap-details">
+                  <h5>Customer Support</h5>
+                  <p>7-24 email and phone are available.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-sm-6">
+            <div class="single-service-wrap">
+               <div class="thumb">
+                  <img th:src="@{/picture/02.png}" alt="img">
+               </div>
+               <div class="wrap-details">
+                  <h5>Face-to-face Payment</h5>
+                  <p>Make the transaction in person</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-sm-6">
+            <div class="single-service-wrap">
+               <div class="thumb">
+                  <img th:src="@{/picture/04.png}" alt="img">
+               </div>
+               <div class="wrap-details">
+                  <h5>Door-to-door Delivery</h5>
+                  <p>Just wait at home and open TWIG.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-sm-6">
+            <div class="single-service-wrap">
+               <div class="thumb">
+                  <img th:src="@{/picture/03.png}" alt="img">
+               </div>
+               <div class="wrap-details">
+                  <h5>Quality Assurance</h5>
+                  <p>Contact us for problems.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!---Start-Footer-Section-->
+<footer class="footer-section-spacing home-footer-bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-4 col-md-4">
+            <div class="footer-about">
+               <img th:src="@{/picture/logo.png}" alt="">
+               <p>TWIG is committed to solving problems around you, helping you expand your business and finding you a part-time job.</p>
+            </div>
+         </div>
+         <!--item-->
+         <div class="col-lg-4 col-md-4">
+            <div class="popular-tag">
+               <h4 class="footer-title">Type Tags</h4>
+               <ul>
+                  <li><a href="#">Entertainment,Leisure</a>
+                  </li>
+                  <li><a href="#">Dining,Gourmet</a>
+                  </li>
+                  <li><a href="#">Commodities,Goods</a>
+                  </li>
+                  <li><a href="#">Tourism,Hotel</a>
+                  </li>
+                  <li class="active"><a href="#">House Keeping,Babysitting</a>
+                  </li>
+                  <li><a href="#">Health Care</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!--item-->
+         <div class="col-lg-4 col-md-4">
+            <div class="contact-us">
+               <h4 class="footer-title">Contact-Us</h4>
+               <ul>
+                  <li><i class="fas fa-map-marker-alt"></i> 112 The Plaza, Clay Pit Lane, Leeds, United Kingdom</li>
+                  <li><i class="fas fa-phone-alt"></i>+44 07182 986725</li>
+                  <li><i class="fas fa-envelope"></i> contactUs@twig.com</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<!--- scroll-to-top -->
+<a href="#" id="btn-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Jquery.min.js-->
+<script th:src="@{/js/jquery-3.3.1.slim.min.js}"></script>
+<script th:src="@{/js/jquery.1.12.4.js}"></script>
+<!--bootstrap.min.js-->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!--slicknav.min.js-->
+<script th:src="@{/js/jquery.slicknav.min.js}"></script>
+<!--slickslider.min.js-->
+<script th:src="@{/js/slick.min.js}"></script>
+<!-- waypoint.min.js -->
+<script th:src="@{/js/waypoints.min.js}"></script>
+<!-- lity.js -->
+<script th:src="@{/js/lity.min.js}"></script>
+<!-- imagesloaded.js -->
+<script th:src="@{/js/imagesloaded.js}"></script>
+<!-- wow.js -->
+<script th:src="@{/js/wow.min.js}"></script>
+<!-- main.js -->
+<script th:src="@{/js/main.js}"></script>
+<!-- relx.js -->
+<script th:src="@{/js/relx.js}"></script>
+</body>
+</html>

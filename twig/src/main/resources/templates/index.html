@@ -1,0 +1,867 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>TWIG</title><!--主界面-->
+      <!--bootstrap.min.css-->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+      <!--animate.css-->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}"/>
+      <!--fontawesome 5-->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/all.min.css}"/>
+      <!--slicknav.css-->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/slicknav.min.css}"/>
+      <!--slickslider.css-->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/slick-theme.css}"/>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}"/>
+      <!-- lity.css -->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/lity.min.css}"/>
+      <!-- flaticon.css -->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/flaticon.css}"/>
+      <!-- Custom.css -->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}"/>
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script th:src="@{/js/html5shiv.js}"></script>
+      <script th:src="@{/js/respond.min.js}"></script>
+       <![endif]-->
+   </head>
+   <body>
+      <!-- Preloader -->
+      <div id="preloader"></div>
+      <!-- Start-Header-Section -->
+      <!-- Menu-start-area -->
+      <header>
+         <!--Nav-Bar-->
+         <div class="topbar">
+            <div class="container">
+               <div class="row">
+                  <div class="top-content">
+                     <div class="selec-lang">
+                        <div class="lang-drop eng">
+                           <select>
+                              <option value="USD" class="option-bg">UK</option>
+                              <option value="INR">CHN</option>
+                              <option value="UAE">UAE</option>
+                           </select>
+                        </div>
+                        <div class="lang-drop">
+                           <select>
+                              <option value="English">English</option>
+                              <option value="Hindi">Chinese</option>
+                              <option value="French">French</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--Nav-Bar-->
+         <div class="header-fixed header-one">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-2 col-md-12 col-sm-12">
+                     <div class="nav-brand">
+                        <a th:href="@{/toHome}"><img th:src="@{/picture/logo.png}" alt="logo.png" class="logo"></a>
+                     </div>
+                  </div>
+                  <div class="col-lg-8">
+                     <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="collapse navbar-collapse my-lg-0" id="navbarNav">
+                           <ul class="navbar-nav mr-auto text-left">
+                              <li class="nav-item active">
+                                 <a class="nav-link scroll" th:href="@{/toHome}">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" href="Shop.html">Service</a>
+                                 <ul class="dropdown">
+                                    <li class="nav-item">
+                                       <a class="nav-link scroll" href="upload-service.html">Service Lists</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link scroll" th:href="@{/toUploadService}">Upload Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link scroll" th:href="@{/toUploadSkill}">Upload Skills</a>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" th:href="@{/toUserInfo}">Account</a>
+                                 <ul class="dropdown">
+                                    <li class="nav-item">
+                                       <a class="nav-link scroll" th:href="@{/toUserInfo}">Account Details</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link scroll" th:href="@{/toOrderHistory}">Order History</a>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link scroll" th:href="@{/toContactUs}">Contact Us</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+                  <div class="col-lg-2">
+                     <div class="login-cart">
+                        <a class="nav-user" th:href="@{/login}"><i class="far fa-user"></i></a>
+                     </div>
+                  </div>
+                  <div class="mobile-menu" data-logo="images/logo.png"></div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- End-Menu-area-->
+      <main class="main-div home-slider">
+         <div class="slider-bg ">
+            <div class="hero-slider-content">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7 col-md-12 col-sm-12">
+                        <div class="slider-content wow fadeInUp" data-wow-delay=".25s" data-wow-duration="2s" data-wow-iteration="1">
+                           <h2 class="hero-sub-title">Local Service TWIG</h2>
+                           <h1 class="hero-title">Find IT <span> By Your Side </span></h1>
+                           <p class="hero-text">Find professionals who can solve your problems in your city, we provide you with door-to-door service, all you need to do is wait, and problem is solved</p>
+                           <a href="#" class="slider-btn">
+                              <form action="/findAllService" method="post">
+                                 <input type="text" name="title" id="title" placeholder="find services here" style="border: none" class="text-black-50"/>
+                                 <button type="submit" class="contact-btn" style="border: #fd7e14">Find Now</button>
+                              </form>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="slider-img">
+                        <img th:src="@{/picture/slider-img.png}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="slider-bg ">
+            <div class="hero-slider-content">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7 col-md-12 col-sm-12">
+                        <div class="slider-content wow fadeInUp" data-wow-delay=".25s" data-wow-duration="2s" data-wow-iteration="1">
+                           <h2 class="hero-sub-title">Local Service TWIG</h2>
+                           <h1 class="hero-title">Increase your <span> sales </span></h1>
+                           <p class="hero-text">Announce your store products and deliver them to customers in the same city</p>
+                           <a href="#" class="slider-btn">
+                                 <!--<input type="text" name="searchStr" placeholder="find services here" class="text-black-50"/>-->
+                                 <button type="submit" class="contact-btn" onclick="window.open('/toUploadService')">Start Now</button>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="slider-img">
+                        <img th:src="@{/picture/slider-img1.png}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="slider-bg ">
+            <div class="hero-slider-content">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7 col-md-12 col-sm-12">
+                        <div class="slider-content wow fadeInUp" data-wow-delay=".25s" data-wow-duration="2s" data-wow-iteration="1">
+                           <h2 class="hero-sub-title">Local Service TWIG</h2>
+                           <h1 class="hero-title">Play to <span>your strength </span></h1>
+                           <p class="hero-text">Or you have special skills to serve others. You can also upload information here for others to find and earn some pocket money</p>
+                           <a href="#" class="slider-btn">
+                                <!--<input type="text" name="searchStr" placeholder="find services here" class="text-black-50"/>-->
+                                 <button type="submit" class="contact-btn" onclick="window.open('/toUploadSkill')">Let's earn some money Now</button>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="slider-img">
+                        <img th:src="@{/picture/slider-img2.png}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!---End-Main-Section-->
+      <!---Category-Section-->
+      <section class="section-spacing">
+         <div class="container">
+            <div class="row">
+               <div class="client-Slider">
+                  <div class="home-category">
+                     <span><img th:src="@{/picture/la.png}" alt=""></span>
+                     <h5>Entertainment, Leisure</h5>
+                  </div>
+                  <!--item-->
+                  <div class="home-category">
+                     <span><img th:src="@{/picture/dg.png}" alt=""></span>
+                     <h5>Dining, Gourmet</h5>
+                  </div>
+                  <!--item-->
+                  <div class="home-category">
+                     <span><img th:src="@{/picture/cg.png}" alt=""></span>
+                     <h5>Commodities, Goods</h5>
+                  </div>
+                  <!--item-->
+                  <div class="home-category">
+                     <span><img th:src="@{/picture/th.png}" alt=""></span>
+                     <h5>Tourism, Hotel</h5>
+                  </div>
+                  <!--item-->
+                  <div class="home-category">
+                     <span><img th:src="@{/picture/hb.png}" alt=""></span>
+                     <h5>House Keeping, Babysitting</h5>
+                  </div>
+                  <!--item-->
+                  <div class="home-category">
+                     <span><img th:src="@{/picture/hc.png}" alt=""></span>
+                     <h5>Health Care </h5>
+                  </div>
+                  <!--item-->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!---Category-Section-->
+      <!---Start-Trending-Product-section-->
+      <!--<section class="same-section-spacing">
+         <div class="container">
+            <div class="row">
+               <div class="product-slider">
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+                  &lt;!&ndash;item&ndash;&gt;
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+                  &lt;!&ndash;item&ndash;&gt;
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+                  &lt;!&ndash;item&ndash;&gt;
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+                  &lt;!&ndash;item&ndash;&gt;
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+                  &lt;!&ndash;item&ndash;&gt;
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}"  class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+                  &lt;!&ndash;item&ndash;&gt;
+                  <div class="new-collection-item">
+                     <div class="new-collection-item-img">
+                        <button class="wishlist noselect">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                           </svg>
+                        </button>
+                        <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                        <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                     </div>
+                     <div class="new-collection-item-content">
+                        <ul class="item-rating">
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="fas fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                           <li><i class="far fa-star"></i>
+                           </li>
+                        </ul>
+                        <h5>Ardene Microfiber Tights</h5>
+                        <span>$25</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>-->
+      <!---End-Trending-Product-Section-->
+      <!---Category-Section-->
+      <!--<section class="same-section-spacing">
+        <div class="container">
+         <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="offer-banner">
+                  <div class="row">
+                     <div class="col-lg-8 col-md-8 col-sm-8">
+                        <div class="offer-banner-content">
+                           <h3>Get 50% OFF</h3>
+                           <h5> On Women Collection</h5>
+                           <a href="#">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="offer-banner-img wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s"  data-wow-iteration="1">
+                           <img th:src="@{/picture/product-banner-img.png}" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            &lt;!&ndash;-item&ndash;&gt;
+            <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="offer-banner">
+                  <div class="row">
+                     <div class="col-lg-8 col-md-8 col-sm-8">
+                        <div class="offer-banner-content">
+                           <h3>Get 50% OFF</h3>
+                           <h5> On Women Collection</h5>
+                           <a href="#">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="offer-banner-img wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s"  data-wow-iteration="1">
+                           <img th:src="@{/picture/02-product-banner-img.png}" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        </div>
+      </section>-->
+      <!---Category-Section-->
+      <!---Start-Offer-Banner-Section-->
+      <!--<section class="ws-section-spacing banner-bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-7 col-md-12 col-sm-12">
+                  <div class="banner-content wow fadeInUp" data-wow-delay=".25s" data-wow-duration="2s" data-wow-iteration="1">
+                     <h5>Get 50% Discount On</h5>
+                     <h2>Best Price & Great Quality</h2>
+                     <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus.</p>
+                     <a href="" class="buy-now">Shop Now</a>
+                  </div>
+               </div>
+               <div class="col-lg-5 col-md-12 col-sm-12">
+                  <div class="deal-img wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s"  data-wow-iteration="1">
+                     <img th:src="@{/picture/drone.png}" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>-->
+      <!---End-Offer-Banner-Section-->
+      <!---Start-Offer-Banner-Section-->
+      <section class="ws-section-spacing">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <h2 class="title">Trending Services</h2>
+                  <div class="saprater bottom-spacing">
+                     <ul>
+                        <li class="saprater-box"></li>
+                        <li class="saprater-box"></li>
+                        <li class="saprater-box"></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-3">
+                  <div class="deal one-time">
+                     <div class="product-offer">
+                        <div class="product-offer-content">
+                           <h6>Don't know your needs?</h6>
+                           <h2>Start here</h2>
+                           <p>You can find good things you haven't thought of.</p>
+                           <a href="" class="buy-now">Start now</a>
+                        </div>
+                     </div>
+                     <div class="product-offer">
+                        <div class="product-offer-content">
+                           <h6>Don't know your needs?</h6>
+                           <h2>Start here</h2>
+                           <p>You can find good things you haven't thought of.</p>
+                           <a href="" class="buy-now">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="product-offer">
+                        <div class="product-offer-content">
+                           <h6>Don't know your needs?</h6>
+                           <h2>Start here</h2>
+                           <p>You can find good things you haven't thought of.</p>
+                           <a href="" class="buy-now">Shop Now</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class=" col-lg-9">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="new-collection-item">
+                           <div class="new-collection-item-img">
+                              <button class="wishlist noselect">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                                    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                                 </svg>
+                              </button>
+                              <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                              <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                           </div>
+                           <div class="new-collection-item-content">
+                              <ul class="item-rating">
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                              </ul>
+                              <h5>Ardene Microfiber Tights</h5>
+                              <span>$25</span>
+                           </div>
+                        </div>
+                     </div>
+                     <!--item-->
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="new-collection-item">
+                           <div class="new-collection-item-img">
+                              <button class="wishlist noselect">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                                    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                                 </svg>
+                              </button>
+                              <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                              <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                           </div>
+                           <div class="new-collection-item-content">
+                              <ul class="item-rating">
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                              </ul>
+                              <h5>Ardene Microfiber Tights</h5>
+                              <span>$25</span>
+                           </div>
+                        </div>
+                     </div>
+                     <!--item-->
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="new-collection-item">
+                           <div class="new-collection-item-img">
+                              <button class="wishlist noselect">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                                    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                                 </svg>
+                              </button>
+                              <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                              <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                           </div>
+                           <div class="new-collection-item-content">
+                              <ul class="item-rating">
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                              </ul>
+                              <h5>Ardene Microfiber Tights</h5>
+                              <span>$25</span>
+                           </div>
+                        </div>
+                     </div>
+                     <!--item-->
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="new-collection-item">
+                           <div class="new-collection-item-img">
+                              <button class="wishlist noselect">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                                    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                                 </svg>
+                              </button>
+                              <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                              <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                           </div>
+                           <div class="new-collection-item-content">
+                              <ul class="item-rating">
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                              </ul>
+                              <h5>Ardene Microfiber Tights</h5>
+                              <span>$25</span>
+                           </div>
+                        </div>
+                     </div>
+                     <!--item-->
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="new-collection-item">
+                           <div class="new-collection-item-img">
+                              <button class="wishlist noselect">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                                    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                                 </svg>
+                              </button>
+                              <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                              <a href="" class="add-to-cart"><i class="fas fa-cart-plus"></i>Add To Cart</a>
+                           </div>
+                           <div class="new-collection-item-content">
+                              <ul class="item-rating">
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                              </ul>
+                              <h5>Ardene Microfiber Tights</h5>
+                              <span>$25</span>
+                           </div>
+                        </div>
+                     </div>
+                     <!--item-->
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="new-collection-item">
+                           <div class="new-collection-item-img">
+                              <button class="wishlist noselect">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 26 26">
+                                    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                                 </svg>
+                              </button>
+                              <img th:src="@{/picture/t1.png}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+                              <a th:href="@{/toHome}" class="add-to-cart">Add To Cart</a>
+                           </div>
+                           <div class="new-collection-item-content">
+                              <ul class="item-rating">
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="fas fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                                 <li><i class="far fa-star"></i>
+                                 </li>
+                              </ul>
+                              <h5>1</h5>
+                              <span>$25</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!---End-Offer-Banner-Section-->
+      <section class="section-spacing service-area">
+         <div class="container">
+            <div class="row service-border wow fadeInUp" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1">
+               <div class="col-lg-3 col-sm-6">
+                  <div class="single-service-wrap">
+                     <div class="thumb">
+                        <img th:src="@{/picture/01.png}" alt="img">
+                     </div>
+                     <div class="wrap-details">
+                        <h5>Customer Support</h5>
+                        <p>7-24 email and phone are available.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="single-service-wrap">
+                     <div class="thumb">
+                        <img th:src="@{/picture/02.png}" alt="img">
+                     </div>
+                     <div class="wrap-details">
+                        <h5>Face-to-face Payment</h5>
+                        <p>Make the transaction in person</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="single-service-wrap">
+                     <div class="thumb">
+                        <img th:src="@{/picture/04.png}" alt="img">
+                     </div>
+                     <div class="wrap-details">
+                        <h5>Door-to-door Delivery</h5>
+                        <p>Just wait at home and open TWIG.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="single-service-wrap">
+                     <div class="thumb">
+                        <img th:src="@{/picture/03.png}" alt="img">
+                     </div>
+                     <div class="wrap-details">
+                        <h5>Quality Assurance</h5>
+                        <p>Contact us for problems.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!---Start-Footer-Section-->
+      <footer class="footer-section-spacing home-footer-bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-4 col-md-4">
+                  <div class="footer-about">
+                     <img th:src="@{/picture/logo.png}" alt="">
+                     <p>TWIG is committed to solving problems around you, helping you expand your business and finding you a part-time job.</p>
+                  </div>
+               </div>
+               <!--item-->
+               <div class="col-lg-4 col-md-4">
+                  <div class="popular-tag">
+                     <h4 class="footer-title">Type Tags</h4>
+                     <ul>
+                        <li><a href="#">Entertainment,Leisure</a>
+                        </li>
+                        <li><a href="#">Dining,Gourmet</a>
+                        </li>
+                        <li><a href="#">Commodities,Goods</a>
+                        </li>
+                        <li><a href="#">Tourism,Hotel</a>
+                        </li>
+                        <li class="active"><a href="#">House Keeping,Babysitting</a>
+                        </li>
+                        <li><a href="#">Health Care</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!--item-->
+               <div class="col-lg-4 col-md-4">
+                  <div class="contact-us">
+                     <h4 class="footer-title">Contact-Us</h4>
+                     <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 112 The Plaza, Clay Pit Lane, Leeds, United Kingdom</li>
+                        <li><i class="fas fa-phone-alt"></i>+44 07182 986725</li>
+                        <li><i class="fas fa-envelope"></i> contactUs@twig.com</li>
+                     </ul>
+                  </div>
+               </div>
+               <!--copy-right-->
+               <div class="container">
+                  <div class="row justify-content-center">
+                     <div class="container-fluid">
+                        <div class="copy-right">
+                           <span class="copy-right-seprater"></span>
+                           <p>Copyright &copy; 2021.TWIG All rights reserved.</p>
+                           <p>Some images from <a target="_blank" th:href="@{https://image.baidu.com/}">https://image.baidu.com/</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!--end copy-right-->
+            </div>
+         </div>
+      </footer>
+      <!--- scroll-to-top -->
+      <a href="#" id="btn-to-top"><i class="fas fa-arrow-up"></i></a>
+      <!-- Jquery.min.js-->
+      <script th:src="@{/js/jquery-3.3.1.slim.min.js}"></script>
+      <script th:src="@{/js/jquery.1.12.4.js}"></script>
+      <!--bootstrap.min.js-->
+      <script th:src="@{/js/bootstrap.min.js}"></script>
+      <!--slicknav.min.js-->
+      <script th:src="@{/js/jquery.slicknav.min.js}"></script>
+      <!--slickslider.min.js-->
+      <script th:src="@{/js/slick.min.js}"></script>
+      <!-- waypoint.min.js -->
+      <script th:src="@{/js/waypoints.min.js}"></script>
+      <!-- lity.js -->
+      <script th:src="@{/js/lity.min.js}"></script>
+      <!-- imagesloaded.js -->
+      <script th:src="@{/js/imagesloaded.js}"></script>
+      <!-- wow.js -->
+      <script th:src="@{/js/wow.min.js}"></script>
+      <!-- main.js -->
+      <script th:src="@{/js/main.js}"></script>
+      <!-- relx.js -->
+      <script th:src="@{/js/relx.js}"></script>
+   </body>
+</html>

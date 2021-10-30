@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.twig.mapper.UserMapper">
+
+    <select id="findUserAccount" resultType="com.example.twig.pojo.User">
+        select
+            user_id userId, user_type userType, password, nick_name nickName, user_skill userSkill,
+            birthday, phone_number phoneNumber, email, address, postcode, remark1, remark2
+        from
+            User
+        where
+            email = '${email}' and password = '${password}'
+    </select>
+
+    <insert id="userRegister" parameterType="com.example.twig.pojo.User">
+        INSERT INTO
+            user (user_id,user_type,password,nick_name,email,postcode,birthday,phone_number,address)
+        VALUES
+               ('${userId}', '${userType}','${password}','${nickName}','${email}','${postcode}','${birthday}','${phoneNumber}','${address}')
+    </insert>
+
+    <update id="updateInfo" parameterType="com.example.twig.pojo.User">
+        UPDATE
+            user
+        SET
+            nick_name = '${nickName}', email = '${email}', postcode = '${postcode}', birthday = '${birthday}', phone_number = '${phoneNumber}', address = '${address}'
+        WHERE
+            user_id = '${userId}'
+    </update>
+
+    <select id="findUserInfoById" resultType="com.example.twig.pojo.User">
+        select
+            user_id userId, user_type userType, password, nick_name nickName, user_skill userSkill,
+            birthday, phone_number phoneNumber, email, address, postcode, remark1, remark2
+        from
+            User
+        where
+            user_id = '${userId}'
+    </select>
+</mapper>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.twig.mapper.ServiceMapper">
+
+    <select id="findServiceList" resultType="com.example.twig.pojo.Service">
+        select
+               id, title, contract_type contractType, type_detail typeDetail, address, open_time openTime,
+               close_time closeTime, content_pic0 contentPic0, content_pic1 contentPic1, content_pic2 contentPic2,
+               content_word contentWord, remark1, remark2, remark3, remark4
+        from
+             service
+        where
+            title like '%${title}%'
+    </select>
+
+    <select id="findServiceDetail" resultType="com.example.twig.pojo.Service">
+        select
+            id, title, contract_type contractType, type_detail typeDetail, address, open_time openTime,
+            close_time closeTime, content_pic0 contentPic0, content_pic1 contentPic1, content_pic2 contentPic2,
+            content_word contentWord, remark1, remark2, remark3, remark4
+        from
+            service
+        where
+            id = '${id}'
+    </select>
+
+    <select id="addPaInfo" resultType="com.example.twig.pojo.Service">
+        select
+            id, remark4
+        from
+            service
+        where
+            id = '${id}'
+    </select>
+
+
+    <update id="addPa" parameterType="com.example.twig.pojo.Service">
+        UPDATE
+            service
+        SET
+            id = '${id}', title = '${title}', contract_type = '${contractType}',
+            type_detail = '${typeDetail}', address = '${address}', open_time = '${openTime}',
+            close_time = '${closeTime}', content_pic0 = '${contentPic0}', content_pic1 = '${contentPic1}',
+            content_pic2 = '${contentPic2}', content_word = '${contentWord}', remark1 = '${remark1}',
+            remark2 = '${remark2}', remark3 = '${remark3}', remark4 = '${remark4}'
+        WHERE
+            id = '${id}'
+    </update>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.twig.mapper.CommentMapper">
+    <select id="findAllCommentsByService" resultType="com.example.twig.pojo.Comment" parameterType="String">
+        select
+            comment_id commentId, create_time createTime, user_id userId,
+            comment_type commentType, service_id serviceId, cc_id ccId,
+            likes, remark1, remark2, remark3, remark4
+        from
+            comment
+        where
+            service_id = '${id}' and comment_type = '0'
+    </select>
+
+    <select id="findCommentById" resultType="com.example.twig.pojo.Comment" parameterType="String">
+        select
+            comment_id commentId, create_time createTime, user_id userId,
+            comment_type commentType, service_id serviceId, cc_id ccId,
+            likes, remark1, remark2, remark3, remark4
+        from
+            comment
+        where
+            comment_id = '${commentId}'
+    </select>
+
+    <update id="addPa" parameterType="com.example.twig.pojo.Service">
+        UPDATE
+            comment
+        SET
+            comment_id = '${commentId}', create_time = '${createTime}', user_id = '${userId}',
+            comment_type = '${commentType}', service_id = '${serviceId}', cc_id = '${ccId}',
+            likes = '${likes}', remark1 = '${remark1}', remark2 = '${remark2}',
+            remark3 = '${remark3}', remark4 = '${remark4}'
+        WHERE
+            comment_id = '${commentId}'
+    </update>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.twig.mapper.OrderMapper">
+
+    <insert id="insertOrderInfo" parameterType="com.example.twig.pojo.Order">
+        INSERT INTO
+            `order` (order_id,service_id,user_id1,user_id2,create_time,complete_time,order_status,order_success,remark1,remark2,remark3,remark4)
+        VALUES
+            ('${orderId}', '${serviceId}','${userId1}','${userId2}','${createTime}','${completeTime}','${orderStatus}','${orderSuccess}','${remark1}','${remark2}','${remark3}','${remark4}')
+    </insert>
+
+    <delete id="deleteOrderById">
+        delete from `order` where order_id = '${orderId}'
+    </delete>
+
+    <select id="findAllOrder" resultType="com.example.twig.pojo.Order" parameterType="String">
+        select
+            order_id orderId, service_id serviceId, user_id1 userId1,
+               user_id2 userId2, create_time createTime, complete_time completeTime,
+               order_status orderStatus, order_success orderSuccess, remark1,
+               remark2, remark3, remark4
+        from
+            `order`
+        where
+            user_id1 = '${userId}'
+    </select>
+</mapper>
